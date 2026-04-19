@@ -17,6 +17,12 @@ export default async function handler(req, res) {
   }
 
   try {
+    // Check if RESEND_API_KEY is set
+    if (!process.env.RESEND_API_KEY) {
+      console.error('RESEND_API_KEY not configured');
+      return res.status(500).json({ error: 'Email service not configured' });
+    }
+
     // Send email via Resend API
     const response = await fetch('https://api.resend.com/emails', {
       method: 'POST',
@@ -25,7 +31,7 @@ export default async function handler(req, res) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        from: 'noreply@rosherwords.ro',
+        from: 'onboarding@resend.dev',
         to: 'romeonacu777@gmail.com',
         replyTo: email,
         subject: `Ofertă - ${service || 'Consultație'} - de la ${fname} ${lname}`,
@@ -45,8 +51,8 @@ export default async function handler(req, res) {
 
     if (!response.ok) {
       const error = await response.json();
-      console.error('Resend API error:', error);
-      return res.status(500).json({ error: 'Failed to send email' });
+      console.error('Resend API error:', JSON.stringify(error));
+      return res.status(500).json({ error: 'Failed to send email', details: error });
     }
 
     const data = await response.json();
