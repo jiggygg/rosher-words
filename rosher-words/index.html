@@ -934,13 +934,15 @@ function setInvalid(id, invalid){
   if(el){ el.classList.toggle('error', invalid); }
 }
 
-form.addEventListener('submit', function(e){
+form.addEventListener('submit', async function(e){
   e.preventDefault();
   let valid = true;
 
   const fname   = form.fname.value.trim();
   const lname   = form.lname.value.trim();
   const email   = form.email.value.trim();
+  const phone   = form.phone.value.trim();
+  const service = form.service.value.trim();
   const message = form.message.value.trim();
   const gdpr    = form.gdpr.checked;
   const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -961,9 +963,41 @@ form.addEventListener('submit', function(e){
 
   if(!valid) return;
 
-  // Success state
-  form.style.display = 'none';
-  successBox.style.display = 'block';
+  // Send email via API
+  const submitBtn = form.querySelector('button[type="submit"]');
+  const originalText = submitBtn.textContent;
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Se trimite...';
+
+  try {
+    const response = await fetch('/api/contact', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        fname, lname, email, phone, service, message
+      })
+    });
+
+    const data = await response.json();
+
+    if(response.ok){
+      // Success state
+      form.style.display = 'none';
+      successBox.style.display = 'block';
+    } else {
+      // Show error
+      alert('Eroare la trimiterea mesajului. Te rugăm încearcă din nou.');
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalText;
+    }
+  } catch(error){
+    console.error('Form submission error:', error);
+    alert('Eroare la trimiterea mesajului. Verifică conexiunea și încearcă din nou.');
+    submitBtn.disabled = false;
+    submitBtn.textContent = originalText;
+  }
 });
 
 // Clear errors on input
