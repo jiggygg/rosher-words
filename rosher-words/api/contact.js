@@ -49,13 +49,16 @@ export default async function handler(req, res) {
       }),
     });
 
+    const data = await response.json();
+
     if (!response.ok) {
-      const error = await response.json();
-      console.error('Resend API error:', JSON.stringify(error));
-      return res.status(500).json({ error: 'Failed to send email', details: error });
+      console.error('Resend API error:', JSON.stringify(data));
+      console.error('Response status:', response.status);
+      console.error('API Key present:', !!process.env.RESEND_API_KEY);
+      return res.status(500).json({ error: 'Failed to send email', details: data });
     }
 
-    const data = await response.json();
+    console.log('Email sent successfully:', data.id);
     return res.status(200).json({
       success: true,
       message: 'Email trimis cu succes!',
