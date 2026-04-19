@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Politica de Cookies – Rosher Words SRL</title>
+<meta name="description" content="Politica de utilizare a cookie-urilor pe site-ul Rosher Words SRL. Află ce cookies folosim, de ce și cum le poți controla."/>
+<meta name="robots" content="index,follow"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --c1:#1a0533;--c2:#6c2bd9;--c3:#9b59f5;--c4:#d4a9ff;
+  --acc:#f0c040;
+  --bg:#faf9fc;--bg2:#f3effe;--white:#fff;
+  --dark:#0f0520;--text:#2d2040;--muted:#7a6d8a;--border:#e2d9f3;
+  --font:'Inter',system-ui,sans-serif;
+  --serif:'Playfair Display',Georgia,serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.7}
+a{color:var(--c2);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── HEADER ── */
+header{
+  position:sticky;top:0;z-index:99;
+  background:rgba(255,255,255,.93);backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--border);
+  padding:.9rem 0;
+  box-shadow:0 2px 20px rgba(108,43,217,.07);
+}
+.header-inner{max-width:900px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:.6rem;font-weight:900;font-size:1.2rem;color:var(--c1);text-decoration:none}
+.logo:hover{text-decoration:none}
+.logo-mark{width:34px;height:34px;background:linear-gradient(135deg,var(--c2),var(--c3));border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:.85rem;font-weight:900}
+.logo-text em{font-style:normal;color:var(--c2)}
+.back-btn{display:inline-flex;align-items:center;gap:.45rem;font-size:.85rem;font-weight:600;color:var(--muted);border:1.5px solid var(--border);border-radius:50px;padding:.4rem 1rem;transition:all .2s}
+.back-btn:hover{color:var(--c2);border-color:var(--c2);text-decoration:none;background:var(--bg2)}
+
+/* ── HERO BANNER ── */
+.page-banner{
+  background:linear-gradient(135deg,var(--dark) 0%,var(--c1) 100%);
+  padding:4rem 1.5rem 3rem;text-align:center;
+  position:relative;overflow:hidden;
+}
+.page-banner::before{
+  content:'';position:absolute;inset:0;
+  background-image:radial-gradient(rgba(155,89,245,.08) 1px,transparent 1px);
+  background-size:28px 28px;
+}
+.page-banner-inner{position:relative;z-index:1;max-width:700px;margin:0 auto}
+.page-tag{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--acc);background:rgba(240,192,64,.1);border:1px solid rgba(240,192,64,.25);padding:.3rem .9rem;border-radius:50px;margin-bottom:1rem}
+.page-banner h1{font-family:var(--serif);font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;color:#fff;margin-bottom:.75rem}
+.page-banner p{font-size:.95rem;color:rgba(255,255,255,.6);max-width:520px;margin:0 auto}
+.page-meta{margin-top:1.2rem;font-size:.78rem;color:rgba(255,255,255,.35);letter-spacing:.04em}
+
+/* ── CONTENT ── */
+.content-wrap{max-width:900px;margin:0 auto;padding:3.5rem 1.5rem 5rem}
+
+/* Table of contents */
+.toc{
+  background:var(--bg2);border:1px solid var(--border);border-radius:14px;
+  padding:1.5rem 1.75rem;margin-bottom:3rem;
+}
+.toc h2{font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin-bottom:.9rem}
+.toc ol{padding-left:1.2rem;display:flex;flex-direction:column;gap:.4rem}
+.toc li a{font-size:.9rem;color:var(--c2);font-weight:500}
+.toc li a:hover{color:var(--c1)}
+
+/* Sections */
+.policy-section{margin-bottom:3rem}
+.policy-section h2{
+  font-family:var(--serif);font-size:1.4rem;font-weight:800;color:var(--c1);
+  margin-bottom:.9rem;padding-bottom:.6rem;
+  border-bottom:2px solid var(--border);
+  display:flex;align-items:center;gap:.6rem;
+}
+.section-num{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:28px;height:28px;background:var(--c2);color:#fff;
+  border-radius:50%;font-size:.8rem;font-weight:800;font-family:var(--font);
+  flex-shrink:0;
+}
+.policy-section p{color:var(--muted);font-size:.95rem;margin-bottom:.9rem;line-height:1.8}
+.policy-section p:last-child{margin-bottom:0}
+.policy-section ul,.policy-section ol{padding-left:1.4rem;margin-bottom:.9rem;display:flex;flex-direction:column;gap:.4rem}
+.policy-section li{color:var(--muted);font-size:.95rem;line-height:1.7}
+.policy-section strong{color:var(--text)}
+
+/* Cookie table */
+.cookie-table{width:100%;border-collapse:collapse;font-size:.88rem;margin:1.2rem 0;border-radius:10px;overflow:hidden;border:1px solid var(--border)}
+.cookie-table thead{background:linear-gradient(135deg,var(--c1),var(--c2));color:#fff}
+.cookie-table th{padding:.8rem 1rem;text-align:left;font-weight:600;font-size:.8rem;letter-spacing:.05em;text-transform:uppercase}
+.cookie-table td{padding:.75rem 1rem;border-bottom:1px solid var(--border);vertical-align:top}
+.cookie-table tr:last-child td{border-bottom:none}
+.cookie-table tr:nth-child(even) td{background:var(--bg2)}
+.cookie-table tr:hover td{background:rgba(108,43,217,.04)}
+.badge{display:inline-block;padding:.2rem .65rem;border-radius:50px;font-size:.72rem;font-weight:700}
+.badge-green{background:rgba(74,222,128,.12);color:#16a34a}
+.badge-blue{background:rgba(59,130,246,.12);color:#2563eb}
+.badge-orange{background:rgba(245,158,11,.12);color:#d97706}
+.badge-gray{background:rgba(148,163,184,.15);color:#64748b}
+
+/* Info box */
+.info-box{
+  background:rgba(108,43,217,.06);border:1px solid rgba(108,43,217,.2);
+  border-left:4px solid var(--c2);border-radius:0 10px 10px 0;
+  padding:1rem 1.25rem;margin:1.2rem 0;font-size:.9rem;color:var(--text);
+}
+.info-box strong{color:var(--c2)}
+
+/* Contact box */
+.contact-box{
+  background:linear-gradient(135deg,var(--c1),var(--c2));
+  border-radius:16px;padding:2rem 2.5rem;text-align:center;color:#fff;margin-top:3rem;
+}
+.contact-box h3{font-family:var(--serif);font-size:1.35rem;font-weight:800;margin-bottom:.5rem}
+.contact-box p{font-size:.9rem;color:rgba(255,255,255,.7);margin-bottom:1.2rem}
+.contact-box a{color:var(--acc);font-weight:700}
+.contact-box a:hover{text-decoration:underline}
+
+/* ── FOOTER ── */
+footer{background:var(--dark);color:rgba(255,255,255,.5);padding:2rem 1.5rem;text-align:center;font-size:.82rem}
+footer a{color:rgba(255,255,255,.4);margin:0 .6rem;transition:color .2s}
+footer a:hover{color:var(--acc);text-decoration:none}
+.footer-links{margin-top:.6rem;display:flex;flex-wrap:wrap;justify-content:center;gap:.25rem}
+
+@media(max-width:600px){
+  .cookie-table{font-size:.78rem}
+  .cookie-table th,.cookie-table td{padding:.6rem .7rem}
+  .contact-box{padding:1.5rem 1.25rem}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <div class="logo-mark">RW</div>
+      <div class="logo-text"><em>Rosher</em> Words</div>
+    </a>
+    <a href="index.html" class="back-btn">← Înapoi la site</a>
+  </div>
+</header>
+
+<!-- BANNER -->
+<div class="page-banner">
+  <div class="page-banner-inner">
+    <div class="page-tag">Legal</div>
+    <h1>Politica de Cookies</h1>
+    <p>Informații clare și transparente despre cookie-urile utilizate pe site-ul Rosher Words SRL și cum poți gestiona preferințele tale.</p>
+    <div class="page-meta">Ultima actualizare: Aprilie 2026 &nbsp;·&nbsp; Versiunea 1.0</div>
+  </div>
+</div>
+
+<!-- CONTENT -->
+<main class="content-wrap">
+
+  <!-- Table of Contents -->
+  <nav class="toc" aria-label="Cuprins">
+    <h2>Cuprins</h2>
+    <ol>
+      <li><a href="#ce-sunt">Ce sunt cookie-urile?</a></li>
+      <li><a href="#ce-folosim">Ce cookie-uri folosim?</a></li>
+      <li><a href="#tabel">Tabel detaliat cookie-uri</a></li>
+      <li><a href="#terte-parti">Cookie-uri de la terți</a></li>
+      <li><a href="#durata">Durata de stocare</a></li>
+      <li><a href="#control">Cum poți controla cookie-urile?</a></li>
+      <li><a href="#refuz">Ce se întâmplă dacă refuzi?</a></li>
+      <li><a href="#gdpr">Temeiul legal (GDPR)</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ol>
+  </nav>
+
+  <!-- 1 -->
+  <section class="policy-section" id="ce-sunt">
+    <h2><span class="section-num">1</span>Ce sunt cookie-urile?</h2>
+    <p>Cookie-urile sunt fișiere text de mici dimensiuni stocate pe dispozitivul tău (calculator, telefon, tabletă) atunci când vizitezi un site web. Ele permit site-ului să îți recunoască dispozitivul la vizitele ulterioare și să rețină anumite preferințe.</p>
+    <p>Cookie-urile <strong>nu sunt programe</strong> și nu pot accesa alte fișiere de pe dispozitivul tău. Ele nu conțin viruși și nu pot fi utilizate pentru a-ți identifica direct persoana.</p>
+    <div class="info-box"><strong>Pe scurt:</strong> Cookie-urile ne ajută să îți oferim o experiență mai bună pe site și să înțelegem cum este utilizat acesta, astfel încât să îl îmbunătățim continuu.</div>
+  </section>
+
+  <!-- 2 -->
+  <section class="policy-section" id="ce-folosim">
+    <h2><span class="section-num">2</span>Ce categorii de cookie-uri folosim?</h2>
+    <p>Pe site-ul <strong>rosherwords.ro</strong> utilizăm următoarele categorii de cookie-uri:</p>
+    <ul>
+      <li><strong>Cookie-uri strict necesare</strong> — esențiale pentru funcționarea corectă a site-ului (ex: memorarea consimțământului tău pentru cookie-uri). Nu pot fi dezactivate.</li>
+      <li><strong>Cookie-uri de performanță / analiză</strong> — colectează informații anonime despre modul în care vizitatorii folosesc site-ul (ex: Google Analytics 4). Ne ajută să îmbunătățim site-ul.</li>
+      <li><strong>Cookie-uri de funcționalitate</strong> — rețin preferințele tale (ex: limba, setările formularului) pentru a-ți oferi o experiență personalizată.</li>
+      <li><strong>Cookie-uri de marketing</strong> — folosite pentru a afișa reclame relevante și a măsura eficiența campaniilor publicitare (ex: Meta Pixel, Google Ads). Sunt activate doar cu acordul tău.</li>
+    </ul>
+  </section>
+
+  <!-- 3 -->
+  <section class="policy-section" id="tabel">
+    <h2><span class="section-num">3</span>Tabel detaliat al cookie-urilor</h2>
+    <p>Mai jos găsești lista completă a cookie-urilor utilizate pe acest site:</p>
+    <div style="overflow-x:auto">
+      <table class="cookie-table" aria-label="Lista cookie-urilor utilizate">
+        <thead>
+          <tr>
+            <th>Nume</th>
+            <th>Furnizor</th>
+            <th>Categorie</th>
+            <th>Scop</th>
+            <th>Durată</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>rw_cookie_consent</code></td>
+            <td>Rosher Words</td>
+            <td><span class="badge badge-green">Necesar</span></td>
+            <td>Reține dacă ai acceptat sau refuzat cookie-urile</td>
+            <td>1 an</td>
+          </tr>
+          <tr>
+            <td><code>_ga</code></td>
+            <td>Google Analytics</td>
+            <td><span class="badge badge-blue">Analiză</span></td>
+            <td>Identifică sesiunile unice de utilizator; generează date statistice anonime</td>
+            <td>2 ani</td>
+          </tr>
+          <tr>
+            <td><code>_ga_XXXXXX</code></td>
+            <td>Google Analytics</td>
+            <td><span class="badge badge-blue">Analiză</span></td>
+            <td>Menține starea sesiunii pentru Google Analytics 4</td>
+            <td>2 ani</td>
+          </tr>
+          <tr>
+            <td><code>_gid</code></td>
+            <td>Google Analytics</td>
+            <td><span class="badge badge-blue">Analiză</span></td>
+            <td>Distinge utilizatorii; stochează și actualizează o valoare unică pentru fiecare pagină vizitată</td>
+            <td>24 ore</td>
+          </tr>
+          <tr>
+            <td><code>_fbp</code></td>
+            <td>Meta (Facebook)</td>
+            <td><span class="badge badge-orange">Marketing</span></td>
+            <td>Urmărește vizitele de pe Facebook Ads și măsoară conversiile</td>
+            <td>3 luni</td>
+          </tr>
+          <tr>
+            <td><code>fr</code></td>
+            <td>Meta (Facebook)</td>
+            <td><span class="badge badge-orange">Marketing</span></td>
+            <td>Livrare și măsurare anunțuri publicitare Facebook</td>
+            <td>3 luni</td>
+          </tr>
+          <tr>
+            <td><code>localStorage: rw_cookie_consent</code></td>
+            <td>Rosher Words</td>
+            <td><span class="badge badge-green">Necesar</span></td>
+            <td>Stochează preferința ta privind cookie-urile în browser (localStorage)</td>
+            <td>Persistent</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="info-box"><strong>Notă:</strong> Cookie-urile de marketing (<code>_fbp</code>, <code>fr</code>) sunt activate doar dacă ai acordat consimțământul explicit prin bannerul de cookie-uri.</div>
+  </section>
+
+  <!-- 4 -->
+  <section class="policy-section" id="terte-parti">
+    <h2><span class="section-num">4</span>Cookie-uri de la terți</h2>
+    <p>Unele cookie-uri sunt plasate de servicii terțe care apar pe paginile noastre. Nu avem control direct asupra acestor cookie-uri. Serviciile terțe utilizate:</p>
+    <ul>
+      <li><strong>Google Analytics 4</strong> — serviciu de analiză web furnizat de Google LLC. Politica de confidențialitate: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">policies.google.com/privacy</a></li>
+      <li><strong>Google Ads / Google Tag Manager</strong> — pentru urmărirea conversiilor din campaniile publicitare. Gestionare: <a href="https://adssettings.google.com" target="_blank" rel="noopener noreferrer">adssettings.google.com</a></li>
+      <li><strong>Meta Pixel (Facebook)</strong> — pentru măsurarea eficienței reclamelor Facebook și Instagram. Politica de confidențialitate: <a href="https://www.facebook.com/privacy/policy" target="_blank" rel="noopener noreferrer">facebook.com/privacy/policy</a></li>
+      <li><strong>Google Fonts</strong> — fonturi web servite de Google; poate plasa cookie-uri funcționale minime.</li>
+    </ul>
+  </section>
+
+  <!-- 5 -->
+  <section class="policy-section" id="durata">
+    <h2><span class="section-num">5</span>Durata de stocare</h2>
+    <p>Cookie-urile pot fi de două tipuri în funcție de durată:</p>
+    <ul>
+      <li><strong>Cookie-uri de sesiune</strong> — sunt șterse automat când închizi browserul. Nu sunt stocate permanent pe dispozitivul tău.</li>
+      <li><strong>Cookie-uri persistente</strong> — rămân pe dispozitivul tău pentru o perioadă determinată (indicată în tabelul de mai sus) sau până când le ștergi manual. La expirare sunt șterse automat.</li>
+    </ul>
+  </section>
+
+  <!-- 6 -->
+  <section class="policy-section" id="control">
+    <h2><span class="section-num">6</span>Cum poți controla cookie-urile?</h2>
+    <p>Ai mai multe opțiuni pentru a gestiona cookie-urile:</p>
+
+    <p><strong>1. Prin bannerul nostru de cookie-uri</strong> — la prima vizită pe site poți accepta sau refuza cookie-urile non-esențiale direct din banner. Îți poți schimba decizia oricând ștergând datele din browser (localStorage).</p>
+
+    <p><strong>2. Prin setările browserului</strong> — poți bloca sau șterge cookie-urile direct din browser:</p>
+    <ul>
+      <li><a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener noreferrer">Google Chrome</a></li>
+      <li><a href="https://support.mozilla.org/ro/kb/activati-si-dezactivati-cookie-urile" target="_blank" rel="noopener noreferrer">Mozilla Firefox</a></li>
+      <li><a href="https://support.apple.com/ro-ro/guide/safari/sfri11471/mac" target="_blank" rel="noopener noreferrer">Safari</a></li>
+      <li><a href="https://support.microsoft.com/ro-ro/windows/ștergerea-și-gestionarea-cookie-urilor-168dab11-0753-043d-7c16-ede5947fc64d" target="_blank" rel="noopener noreferrer">Microsoft Edge</a></li>
+    </ul>
+
+    <p><strong>3. Opt-out specific Google Analytics:</strong> <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer">tools.google.com/dlpage/gaoptout</a></p>
+    <p><strong>4. Setări reclame Google:</strong> <a href="https://adssettings.google.com" target="_blank" rel="noopener noreferrer">adssettings.google.com</a></p>
+    <p><strong>5. Setări reclame Facebook:</strong> <a href="https://www.facebook.com/ads/preferences" target="_blank" rel="noopener noreferrer">facebook.com/ads/preferences</a></p>
+  </section>
+
+  <!-- 7 -->
+  <section class="policy-section" id="refuz">
+    <h2><span class="section-num">7</span>Ce se întâmplă dacă refuzi cookie-urile?</h2>
+    <p>Poți folosi site-ul nostru și dacă refuzi cookie-urile non-esențiale. Cu toate acestea:</p>
+    <ul>
+      <li>Unele funcționalități pot fi limitate sau indisponibile.</li>
+      <li>Nu vom putea personaliza experiența ta pe site.</li>
+      <li>Nu vom putea măsura performanța site-ului și a campaniilor noastre (analytics dezactivat).</li>
+      <li>Este posibil să ți se afișeze reclame mai puțin relevante pe alte platforme.</li>
+    </ul>
+    <p>Cookie-urile <strong>strict necesare</strong> nu pot fi dezactivate deoarece sunt esențiale pentru funcționarea site-ului.</p>
+  </section>
+
+  <!-- 8 -->
+  <section class="policy-section" id="gdpr">
+    <h2><span class="section-num">8</span>Temeiul legal (GDPR)</h2>
+    <p>Utilizarea cookie-urilor pe site-ul nostru este reglementată de:</p>
+    <ul>
+      <li><strong>Regulamentul (UE) 2016/679</strong> (GDPR) — privind protecția datelor cu caracter personal</li>
+      <li><strong>Directiva ePrivacy 2002/58/CE</strong> (Cookie Law) — transpusă în legislația română prin Legea nr. 506/2004</li>
+    </ul>
+    <p>Temeiul legal pentru procesarea datelor prin cookie-uri:</p>
+    <ul>
+      <li><strong>Cookie-uri necesare:</strong> Interes legitim (art. 6(1)(f) GDPR) — necesare pentru funcționarea site-ului.</li>
+      <li><strong>Cookie-uri de analiză și marketing:</strong> Consimțământ (art. 6(1)(a) GDPR) — activate doar la acordul tău explicit.</li>
+    </ul>
+    <p>Ai dreptul să îți retragi consimțământul oricând, fără consecințe negative, prin metodele descrise la secțiunea 6.</p>
+    <div class="info-box">
+      <strong>Autoritatea de supraveghere din România:</strong> Autoritatea Națională de Supraveghere a Prelucrării Datelor cu Caracter Personal (ANSPDCP) — <a href="https://www.dataprotection.ro" target="_blank" rel="noopener noreferrer">dataprotection.ro</a>
+    </div>
+  </section>
+
+  <!-- 9 -->
+  <section class="policy-section" id="contact">
+    <h2><span class="section-num">9</span>Contact și actualizări</h2>
+    <p>Această politică poate fi actualizată periodic pentru a reflecta modificările serviciilor noastre sau ale legislației aplicabile. Data ultimei actualizări este indicată în antetul paginii.</p>
+    <p>Dacă ai întrebări despre modul în care utilizăm cookie-urile sau dorești să îți exerciți drepturile GDPR, ne poți contacta:</p>
+  </section>
+
+  <div class="contact-box">
+    <h3>Ai întrebări despre cookie-uri?</h3>
+    <p>Echipa noastră îți răspunde în cel mult 72 de ore.</p>
+    <p>
+      📧 <a href="mailto:romeonacu777@gmail.com">romeonacu777@gmail.com</a>
+      &nbsp;&nbsp;·&nbsp;&nbsp;
+      📞 <a href="tel:+40727661282" style="color:var(--acc)">0727 661 282</a>
+    </p>
+    <p style="margin-top:.6rem;font-size:.8rem;color:rgba(255,255,255,.45)">Rosher Words SRL &nbsp;·&nbsp; București, România &nbsp;·&nbsp; CUI: RO XXXXXXXX</p>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Rosher Words SRL. Toate drepturile rezervate.</p>
+  <div class="footer-links">
+    <a href="index.html">Acasă</a>
+    <a href="#">Politica de Confidențialitate</a>
+    <a href="cookie-policy.html">Politica de Cookies</a>
+    <a href="#">Termeni și Condiții</a>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Termeni și Condiții – Rosher Words SRL</title>
+<meta name="description" content="Termeni și Condiții de utilizare a site-ului Rosher Words SRL. Reglementări despre utilizare, proprietate intelectuală și limitări de răspundere."/>
+<meta name="robots" content="index,follow"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --c1:#1a0533;--c2:#6c2bd9;--c3:#9b59f5;--c4:#d4a9ff;
+  --acc:#f0c040;
+  --bg:#faf9fc;--bg2:#f3effe;--white:#fff;
+  --dark:#0f0520;--text:#2d2040;--muted:#7a6d8a;--border:#e2d9f3;
+  --font:'Inter',system-ui,sans-serif;
+  --serif:'Playfair Display',Georgia,serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.7}
+a{color:var(--c2);text-decoration:none}
+a:hover{text-decoration:underline}
+
+header{
+  position:sticky;top:0;z-index:99;
+  background:rgba(255,255,255,.93);backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--border);
+  padding:.9rem 0;
+  box-shadow:0 2px 20px rgba(108,43,217,.07);
+}
+.header-inner{max-width:900px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:.6rem;font-weight:900;font-size:1.2rem;color:var(--c1);text-decoration:none}
+.logo-mark{width:34px;height:34px;background:linear-gradient(135deg,var(--c2),var(--c3));border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:.85rem;font-weight:900}
+.back-btn{display:inline-flex;align-items:center;gap:.45rem;font-size:.85rem;font-weight:600;color:var(--muted);border:1.5px solid var(--border);border-radius:50px;padding:.4rem 1rem;transition:all .2s}
+.back-btn:hover{color:var(--c2);border-color:var(--c2);background:var(--bg2)}
+
+.page-banner{
+  background:linear-gradient(135deg,var(--dark) 0%,var(--c1) 100%);
+  padding:4rem 1.5rem 3rem;text-align:center;position:relative;overflow:hidden;
+}
+.page-banner::before{
+  content:'';position:absolute;inset:0;
+  background-image:radial-gradient(rgba(155,89,245,.08) 1px,transparent 1px);
+  background-size:28px 28px;
+}
+.page-banner-inner{position:relative;z-index:1;max-width:700px;margin:0 auto}
+.page-tag{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--acc);background:rgba(240,192,64,.1);border:1px solid rgba(240,192,64,.25);padding:.3rem .9rem;border-radius:50px;margin-bottom:1rem}
+.page-banner h1{font-family:var(--serif);font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;color:#fff;margin-bottom:.75rem}
+.page-banner p{font-size:.95rem;color:rgba(255,255,255,.6);max-width:520px;margin:0 auto}
+.page-meta{margin-top:1.2rem;font-size:.78rem;color:rgba(255,255,255,.35);letter-spacing:.04em}
+
+.content-wrap{max-width:900px;margin:0 auto;padding:3.5rem 1.5rem 5rem}
+
+.toc{
+  background:var(--bg2);border:1px solid var(--border);border-radius:14px;
+  padding:1.5rem 1.75rem;margin-bottom:3rem;
+}
+.toc h2{font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin-bottom:.9rem}
+.toc ol{padding-left:1.2rem;display:flex;flex-direction:column;gap:.4rem}
+.toc li a{font-size:.9rem;color:var(--c2);font-weight:500}
+.toc li a:hover{color:var(--c1)}
+
+.section{margin-bottom:3rem}
+.section h2{
+  font-family:var(--serif);font-size:1.4rem;font-weight:800;color:var(--c1);
+  margin-bottom:.9rem;padding-bottom:.6rem;
+  border-bottom:2px solid var(--border);
+  display:flex;align-items:center;gap:.6rem;
+}
+.section-num{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:28px;height:28px;background:var(--c2);color:#fff;
+  border-radius:50%;font-size:.8rem;font-weight:800;
+  flex-shrink:0;
+}
+.section p{color:var(--muted);font-size:.95rem;margin-bottom:.9rem;line-height:1.8}
+.section ul,.section ol{padding-left:1.4rem;margin-bottom:.9rem;display:flex;flex-direction:column;gap:.4rem}
+.section li{color:var(--muted);font-size:.95rem;line-height:1.7}
+.section strong{color:var(--text)}
+
+.info-box{
+  background:rgba(108,43,217,.06);border:1px solid rgba(108,43,217,.2);
+  border-left:4px solid var(--c2);border-radius:0 10px 10px 0;
+  padding:1rem 1.25rem;margin:1.2rem 0;font-size:.9rem;color:var(--text);
+}
+
+.contact-box{
+  background:linear-gradient(135deg,var(--c1),var(--c2));
+  border-radius:16px;padding:2rem 2.5rem;text-align:center;color:#fff;margin-top:3rem;
+}
+.contact-box h3{font-family:var(--serif);font-size:1.35rem;font-weight:800;margin-bottom:.5rem}
+.contact-box p{font-size:.9rem;color:rgba(255,255,255,.7);margin-bottom:1.2rem}
+.contact-box a{color:var(--acc);font-weight:700}
+.contact-box a:hover{text-decoration:underline}
+
+footer{background:var(--dark);color:rgba(255,255,255,.5);padding:2rem 1.5rem;text-align:center;font-size:.82rem}
+footer a{color:rgba(255,255,255,.4);margin:0 .6rem;transition:color .2s}
+footer a:hover{color:var(--acc);text-decoration:none}
+.footer-links{margin-top:.6rem;display:flex;flex-wrap:wrap;justify-content:center;gap:.25rem}
+
+@media(max-width:600px){
+  .contact-box{padding:1.5rem 1.25rem}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <div class="logo-mark">RW</div>
+      <div style="font-size:1rem"><em style="font-style:normal;color:var(--c2)">Rosher</em> Words</div>
+    </a>
+    <a href="index.html" class="back-btn">← Înapoi la site</a>
+  </div>
+</header>
+
+<div class="page-banner">
+  <div class="page-banner-inner">
+    <div class="page-tag">Legal</div>
+    <h1>Termeni și Condiții de Utilizare</h1>
+    <p>Reglementări privind utilizarea site-ului Rosher Words SRL, proprietatea intelectuală și responsabilitatea legală.</p>
+    <div class="page-meta">Ultima actualizare: Aprilie 2026 &nbsp;·&nbsp; Versiunea 1.0</div>
+  </div>
+</div>
+
+<main class="content-wrap">
+
+  <nav class="toc" aria-label="Cuprins">
+    <h2>Cuprins</h2>
+    <ol>
+      <li><a href="#info">1. Informații generale</a></li>
+      <li><a href="#obiect">2. Obiectul site-ului</a></li>
+      <li><a href="#proprii">3. Proprietate intelectuală</a></li>
+      <li><a href="#utilizare">4. Utilizarea site-ului</a></li>
+      <li><a href="#limitare">5. Limitarea răspunderii</a></li>
+      <li><a href="#linkuri">6. Link-uri externe</a></li>
+      <li><a href="#modificare">7. Modificarea termenilor</a></li>
+      <li><a href="#lege">8. Legea aplicabilă și jurisdicție</a></li>
+      <li><a href="#contact">9. Contact</a></li>
+    </ol>
+  </nav>
+
+  <section class="section" id="info">
+    <h2><span class="section-num">1</span>Informații generale</h2>
+    <p>Prezentele Termeni și Condiții reglementează utilizarea site-ului web <strong>rosherwords.ro</strong>, deținut și operat de <strong>Rosher Words SRL</strong>, cu sediul social în <strong>București, România</strong>, înregistrată la Registrul Comerțului cu numărul <strong>J40/XXXX/2026</strong>, CUI <strong>RO XXXXXXXX</strong>, denumită în continuare „Societatea".</p>
+    <p>Prin accesarea și utilizarea acestui site, confirmați că ați citit, înțeles și acceptat acești Termeni și Condiții. Dacă nu sunteți de acord cu vreunul din acești termeni, vă rugăm să nu utilizați site-ul.</p>
+  </section>
+
+  <section class="section" id="obiect">
+    <h2><span class="section-num">2</span>Obiectul site-ului</h2>
+    <p>Site-ul <strong>rosherwords.ro</strong> este un site de prezentare care oferă informații despre serviciile de marketing oferite de Rosher Words SRL, inclusiv:</p>
+    <ul>
+      <li>Content Marketing și Copywriting</li>
+      <li>Social Media Management</li>
+      <li>Publicitate Digitală (PPC, Google Ads, Meta Ads)</li>
+      <li>SEO și optimizare în motoarele de căutare</li>
+      <li>Branding și strategie digitală</li>
+    </ul>
+    <p style="margin-top:1rem">Site-ul este o platformă de comunicare și informare. Orice comandă sau contract se încheie prin proceduri separate, cu documente și acorduri semnate de ambele părți.</p>
+  </section>
+
+  <section class="section" id="proprii">
+    <h2><span class="section-num">3</span>Proprietate intelectuală</h2>
+    <p>Întregul conținut al site-ului – texte, imagini, grafice, logo-uri, structura și designul paginilor – este proprietatea <strong>Rosher Words SRL</strong> și este protejat de legislația română și internațională privind drepturile de autor (Legea nr. 8/1996 și Regulamentul UE 2001/29/CE).</p>
+    <p style="margin-top:.9rem"><strong>Este interzisă:</strong></p>
+    <ul>
+      <li>Reproducerea, distribuirea, modificarea sau utilizarea conținutului fără acordul scris prealabil al Societății</li>
+      <li>Descărcarea în scop comercial sau public a materialelor</li>
+      <li>Crearea de opere derivative pe baza conținutului site-ului</li>
+      <li>Utilizarea conținutului pentru a crea produse concurente</li>
+    </ul>
+    <p style="margin-top:1rem">Orice încălcare a acestor drepturi va rezulta în măsuri legale corespunzătoare.</p>
+  </section>
+
+  <section class="section" id="utilizare">
+    <h2><span class="section-num">4</span>Utilizarea site-ului</h2>
+    <p>Prin utilizarea acestui site vă angajați să:</p>
+    <ul>
+      <li>Nu utilizați site-ul în scopuri ilegale, frauduloase sau dăunătoare</li>
+      <li>Nu transmiteți conținut ofensator, ilegal, rasist, sexist sau dăunător</li>
+      <li>Nu încercați să accesați neautorizat sistemele informatice ale Societății</li>
+      <li>Nu interferați cu funcționarea normală a site-ului (spam, flooding, malware)</li>
+      <li>Nu colectați date de pe site în scopuri neautorizate (scraping)</li>
+      <li>Nu utilizați site-ul în scopuri de hărțuire, intimidare sau amenințări</li>
+    </ul>
+    <div class="info-box">
+      <strong>Consecinței:</strong> Încălcarea acestor obligații poate rezulta în blocarea accesului și în acțiuni legale.
+    </div>
+  </section>
+
+  <section class="section" id="limitare">
+    <h2><span class="section-num">5</span>Limitarea răspunderii</h2>
+    <p>Rosher Words SRL depune toate eforturile pentru a menține informațiile de pe site actuale, corecte și funcționale. Cu toate acestea:</p>
+    <ul>
+      <li><strong>Nu garantează</strong> exactitatea, completitudinea sau actualitatea informațiilor</li>
+      <li><strong>Nu este responsabilă</strong> pentru daunele directe sau indirecte rezultate din utilizarea sau imposibilitatea utilizării site-ului</li>
+      <li><strong>Nu controlează</strong> conținutul site-urilor terțe accesibile prin link-uri</li>
+      <li><strong>Nu este responsabilă</strong> pentru întreruperi tehnice temporare ale site-ului</li>
+      <li><strong>Nu este responsabilă</strong> pentru pierderea de date din cauza unor defecțiuni tehnice</li>
+    </ul>
+    <p style="margin-top:1rem">Site-ul este furnizat „în stare actuală" („as is") fără garanții expresse sau implicite.</p>
+  </section>
+
+  <section class="section" id="linkuri">
+    <h2><span class="section-num">6</span>Link-uri externe</h2>
+    <p>Site-ul poate conține link-uri către site-uri externe (de exemplu: partenerul nostru de hosting, rețelele sociale, articole externe). Aceste link-uri sunt furnizate exclusiv pentru comoditatea dumneavoastră.</p>
+    <p style="margin-top:.9rem"><strong>Rosher Words SRL:</strong></p>
+    <ul>
+      <li>Nu are control asupra conținutului acestor site-uri</li>
+      <li>Nu și-o asumă responsabilitate pentru conținutul, politicile de confidențialitate sau practicile acestora</li>
+      <li>Nu recomandă neapărat aceste site-uri; link-urile sunt doar pentru referință</li>
+    </ul>
+    <p style="margin-top:1rem">Vizitarea site-urilor externe este pe riscul dumneavoastră. Vă recomandăm să citiți politicile lor de confidențialitate și termenii de utilizare.</p>
+  </section>
+
+  <section class="section" id="modificare">
+    <h2><span class="section-num">7</span>Modificarea termenilor</h2>
+    <p>Rosher Words SRL își rezervă dreptul de a modifica acești Termeni și Condiții oricând, fără notificare prealabilă. Versiunea actualizată va fi publicată pe site cu data modificării.</p>
+    <p style="margin-top:.9rem"><strong>Continuarea utilizării site-ului după publicarea modificărilor constituie acceptarea noilor termeni.</strong></p>
+    <p style="margin-top:.9rem">Vă recomandăm să consultați periodic această pagină pentru a rămâne la curent cu orice schimbări.</p>
+  </section>
+
+  <section class="section" id="lege">
+    <h2><span class="section-num">8</span>Legea aplicabilă și jurisdicție</h2>
+    <p>Acești Termeni și Condiții sunt guvernați de <strong>legislația română</strong>. Orice dispută va fi supusă jurisdicției exclusive a instanțelor judecătorești competente din <strong>București, România</strong>.</p>
+
+    <p style="margin-top:1.5rem"><strong>Consumatorii au drepturi suplimentare:</strong></p>
+    <ul>
+      <li><strong>Soluționarea alternativă a litigiilor (ADR):</strong> Puteți apela la platforma online de rezolvare a litigiilor a Comisiei Europene: <a href="https://consumer-redress.ec.europa.eu/site-relocation_en?event=main.home.chooseLanguage" target="_blank" rel="noopener noreferrer">consumer-redress.ec.europa.eu</a></li>
+      <li><strong>ANPC (Autoritatea Națională pentru Protecția Consumatorilor):</strong> <a href="https://www.anpc.gov.ro" target="_blank" rel="noopener noreferrer">www.anpc.gov.ro</a></li>
+      <li><strong>Contact ANPC:</strong> 021.312.38.88 sau contact@anpc.gov.ro</li>
+    </ul>
+
+    <div class="info-box">
+      Dacă sunteți consumator și aveți o dispută cu Rosher Words SRL, aveți dreptul de a apela la aceste servicii de mediere și arbitraj independent, fără a renunța la dreptul de a merge în justiție.
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <h2><span class="section-num">9</span>Contact</h2>
+  </section>
+
+  <div class="contact-box">
+    <h3>Ai întrebări despre acești termeni?</h3>
+    <p>Contactează-ne pentru clarificări privind Termenii și Condițiile sau pentru a raporta încălcări.</p>
+    <p>
+      📧 <a href="mailto:romeonacu777@gmail.com">romeonacu777@gmail.com</a>
+      &nbsp;&nbsp;·&nbsp;&nbsp;
+      📞 <a href="tel:+40727661282">0727 661 282</a>
+    </p>
+    <p style="margin-top:.6rem;font-size:.8rem;color:rgba(255,255,255,.45)">Rosher Words SRL &nbsp;·&nbsp; București &nbsp;·&nbsp; CUI: RO XXXXXXXX</p>
+  </div>
+
+</main>
+
+<footer>
+  <p>© 2026 Rosher Words SRL. Toate drepturile rezervate.</p>
+  <div class="footer-links">
+    <a href="index.html">Acasă</a>
+    <a href="privacy-policy.html">Politica de Confidențialitate</a>
+    <a href="terms-conditions.html">Termeni și Condiții</a>
+    <a href="anpc.html">ANPC</a>
+  </div>
+</footer>
+
+</body>
+</html>

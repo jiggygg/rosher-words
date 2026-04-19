@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Politica de Confidențialitate – Rosher Words SRL</title>
+<meta name="description" content="Politica de Confidențialitate a Rosher Words SRL. Cum colectez și protejez datele personale ale vizitatorilor și clienților."/>
+<meta name="robots" content="index,follow"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --c1:#1a0533;--c2:#6c2bd9;--c3:#9b59f5;--c4:#d4a9ff;
+  --acc:#f0c040;
+  --bg:#faf9fc;--bg2:#f3effe;--white:#fff;
+  --dark:#0f0520;--text:#2d2040;--muted:#7a6d8a;--border:#e2d9f3;
+  --font:'Inter',system-ui,sans-serif;
+  --serif:'Playfair Display',Georgia,serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.7}
+a{color:var(--c2);text-decoration:none}
+a:hover{text-decoration:underline}
+
+header{
+  position:sticky;top:0;z-index:99;
+  background:rgba(255,255,255,.93);backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--border);
+  padding:.9rem 0;
+  box-shadow:0 2px 20px rgba(108,43,217,.07);
+}
+.header-inner{max-width:900px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:.6rem;font-weight:900;font-size:1.2rem;color:var(--c1);text-decoration:none}
+.logo-mark{width:34px;height:34px;background:linear-gradient(135deg,var(--c2),var(--c3));border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:.85rem;font-weight:900}
+.back-btn{display:inline-flex;align-items:center;gap:.45rem;font-size:.85rem;font-weight:600;color:var(--muted);border:1.5px solid var(--border);border-radius:50px;padding:.4rem 1rem;transition:all .2s}
+.back-btn:hover{color:var(--c2);border-color:var(--c2);background:var(--bg2)}
+
+.page-banner{
+  background:linear-gradient(135deg,var(--dark) 0%,var(--c1) 100%);
+  padding:4rem 1.5rem 3rem;text-align:center;position:relative;overflow:hidden;
+}
+.page-banner::before{
+  content:'';position:absolute;inset:0;
+  background-image:radial-gradient(rgba(155,89,245,.08) 1px,transparent 1px);
+  background-size:28px 28px;
+}
+.page-banner-inner{position:relative;z-index:1;max-width:700px;margin:0 auto}
+.page-tag{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--acc);background:rgba(240,192,64,.1);border:1px solid rgba(240,192,64,.25);padding:.3rem .9rem;border-radius:50px;margin-bottom:1rem}
+.page-banner h1{font-family:var(--serif);font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;color:#fff;margin-bottom:.75rem}
+.page-banner p{font-size:.95rem;color:rgba(255,255,255,.6);max-width:520px;margin:0 auto}
+.page-meta{margin-top:1.2rem;font-size:.78rem;color:rgba(255,255,255,.35);letter-spacing:.04em}
+
+.content-wrap{max-width:900px;margin:0 auto;padding:3.5rem 1.5rem 5rem}
+
+.toc{
+  background:var(--bg2);border:1px solid var(--border);border-radius:14px;
+  padding:1.5rem 1.75rem;margin-bottom:3rem;
+}
+.toc h2{font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin-bottom:.9rem}
+.toc ol{padding-left:1.2rem;display:flex;flex-direction:column;gap:.4rem}
+.toc li a{font-size:.9rem;color:var(--c2);font-weight:500}
+.toc li a:hover{color:var(--c1)}
+
+.section{margin-bottom:3rem}
+.section h2{
+  font-family:var(--serif);font-size:1.4rem;font-weight:800;color:var(--c1);
+  margin-bottom:.9rem;padding-bottom:.6rem;
+  border-bottom:2px solid var(--border);
+  display:flex;align-items:center;gap:.6rem;
+}
+.section-num{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:28px;height:28px;background:var(--c2);color:#fff;
+  border-radius:50%;font-size:.8rem;font-weight:800;
+  flex-shrink:0;
+}
+.section p{color:var(--muted);font-size:.95rem;margin-bottom:.9rem;line-height:1.8}
+.section ul,.section ol{padding-left:1.4rem;margin-bottom:.9rem;display:flex;flex-direction:column;gap:.4rem}
+.section li{color:var(--muted);font-size:.95rem;line-height:1.7}
+.section strong{color:var(--text)}
+
+.info-box{
+  background:rgba(108,43,217,.06);border:1px solid rgba(108,43,217,.2);
+  border-left:4px solid var(--c2);border-radius:0 10px 10px 0;
+  padding:1rem 1.25rem;margin:1.2rem 0;font-size:.9rem;color:var(--text);
+}
+
+.contact-box{
+  background:linear-gradient(135deg,var(--c1),var(--c2));
+  border-radius:16px;padding:2rem 2.5rem;text-align:center;color:#fff;margin-top:3rem;
+}
+.contact-box h3{font-family:var(--serif);font-size:1.35rem;font-weight:800;margin-bottom:.5rem}
+.contact-box p{font-size:.9rem;color:rgba(255,255,255,.7);margin-bottom:1.2rem}
+.contact-box a{color:var(--acc);font-weight:700}
+.contact-box a:hover{text-decoration:underline}
+
+footer{background:var(--dark);color:rgba(255,255,255,.5);padding:2rem 1.5rem;text-align:center;font-size:.82rem}
+footer a{color:rgba(255,255,255,.4);margin:0 .6rem;transition:color .2s}
+footer a:hover{color:var(--acc);text-decoration:none}
+.footer-links{margin-top:.6rem;display:flex;flex-wrap:wrap;justify-content:center;gap:.25rem}
+
+@media(max-width:600px){
+  .contact-box{padding:1.5rem 1.25rem}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <div class="logo-mark">RW</div>
+      <div style="font-size:1rem"><em style="font-style:normal;color:var(--c2)">Rosher</em> Words</div>
+    </a>
+    <a href="index.html" class="back-btn">← Înapoi la site</a>
+  </div>
+</header>
+
+<div class="page-banner">
+  <div class="page-banner-inner">
+    <div class="page-tag">Legal</div>
+    <h1>Politica de Confidențialitate</h1>
+    <p>Informații despre modul în care colectez, utilizez și protejez datele personale ale vizitatorilor și clienților.</p>
+    <div class="page-meta">Ultima actualizare: Aprilie 2026 &nbsp;·&nbsp; Versiunea 1.0</div>
+  </div>
+</div>
+
+<main class="content-wrap">
+
+  <nav class="toc" aria-label="Cuprins">
+    <h2>Cuprins</h2>
+    <ol>
+      <li><a href="#op">1. Identitatea operatorului</a></li>
+      <li><a href="#date">2. Ce date colectăm și de ce</a></li>
+      <li><a href="#durata">3. Cât timp păstrăm datele</a></li>
+      <li><a href="#partaj">4. Cu cine partajăm datele</a></li>
+      <li><a href="#drepturi">5. Drepturile dumneavoastră</a></li>
+      <li><a href="#plangere">6. Dreptul de a depune plângere</a></li>
+      <li><a href="#siguranta">7. Securitatea datelor</a></li>
+      <li><a href="#update">8. Actualizări ale politicii</a></li>
+      <li><a href="#contact">9. Contact</a></li>
+    </ol>
+  </nav>
+
+  <section class="section" id="op">
+    <h2><span class="section-num">1</span>Identitatea operatorului</h2>
+    <p><strong>Rosher Words SRL</strong>, cu sediul în <strong>București, România</strong>, CUI <strong>RO XXXXXXXX</strong>, înregistrată la Registrul Comerțului cu nr. <strong>J40/XXXX/2026</strong>, email: <strong>romeonacu777@gmail.com</strong>, telefon: <strong>0727 661 282</strong>, este Operator de date cu caracter personal în sensul Regulamentului (UE) 2016/679 (GDPR) și al Legii nr. 190/2018.</p>
+  </section>
+
+  <section class="section" id="date">
+    <h2><span class="section-num">2</span>Ce date colectăm și de ce</h2>
+
+    <strong style="color:var(--text);font-size:1rem">a) Date colectate prin formularul de contact:</strong>
+    <ul style="margin-top:.6rem">
+      <li>Nume și prenume</li>
+      <li>Adresă de email</li>
+      <li>Număr de telefon (opțional)</li>
+      <li>Conținutul mesajului</li>
+    </ul>
+    <p style="margin-top:1rem"><strong>Scop:</strong> răspunderea la solicitări și întrebări. <strong>Temei legal:</strong> consimțământul dumneavoastră (Art. 6 alin. 1 lit. a GDPR) și interesul nostru legitim de a răspunde comunicărilor primite (Art. 6 alin. 1 lit. f GDPR).</p>
+
+    <strong style="color:var(--text);font-size:1rem;margin-top:1.5rem;display:block">b) Date colectate automat (analytics):</strong>
+    <ul style="margin-top:.6rem">
+      <li>Adresă IP (anonimizată)</li>
+      <li>Tip browser și sistem de operare</li>
+      <li>Pagini vizitate, timp petrecut pe site</li>
+      <li>Sursa traficului</li>
+    </ul>
+    <p style="margin-top:1rem"><strong>Scop:</strong> îmbunătățirea site-ului și înțelegerea comportamentului utilizatorilor. <strong>Temei legal:</strong> consimțământul dumneavoastră (Art. 6 alin. 1 lit. a GDPR), acordat prin acceptarea cookie-urilor analitice.</p>
+  </section>
+
+  <section class="section" id="durata">
+    <h2><span class="section-num">3</span>Cât timp păstrăm datele</h2>
+    <ul>
+      <li><strong>Date din formularul de contact:</strong> maximum 2 ani de la ultima interacțiune sau până la retragerea consimțământului</li>
+      <li><strong>Date analytics:</strong> 14 luni (setare implicită Google Analytics 4)</li>
+      <li><strong>Date de facturare/contractuale:</strong> 10 ani conform legislației fiscale române</li>
+    </ul>
+  </section>
+
+  <section class="section" id="partaj">
+    <h2><span class="section-num">4</span>Cu cine partajăm datele</h2>
+    <p><strong>Nu vindem datele dumneavoastră.</strong> Putem partaja date cu:</p>
+    <ul>
+      <li><strong>Google LLC</strong> – furnizor Google Analytics (prelucrare date în baza Clauzelor Contractuale Standard)</li>
+      <li><strong>Furnizori de hosting și infrastructură IT</strong> – în baza unor acorduri de prelucrare a datelor</li>
+      <li><strong>Autorități publice</strong> – doar când suntem obligați legal</li>
+    </ul>
+  </section>
+
+  <section class="section" id="drepturi">
+    <h2><span class="section-num">5</span>Drepturile dumneavoastră</h2>
+    <p>În conformitate cu GDPR, aveți următoarele drepturi:</p>
+    <ul>
+      <li><strong>Dreptul de acces</strong> – puteți solicita o copie a datelor deținute</li>
+      <li><strong>Dreptul la rectificare</strong> – puteți cere corectarea datelor inexacte</li>
+      <li><strong>Dreptul la ștergere</strong> (dreptul de a fi uitat)</li>
+      <li><strong>Dreptul la restricționarea prelucrării</strong></li>
+      <li><strong>Dreptul la portabilitatea datelor</strong></li>
+      <li><strong>Dreptul de opoziție</strong> la prelucrare</li>
+      <li><strong>Dreptul de a retrage consimțământul</strong> oricând, fără a afecta legalitatea prelucrărilor anterioare</li>
+    </ul>
+    <p style="margin-top:1rem">Pentru exercitarea drepturilor, contactați-ne la <strong>romeonacu777@gmail.com</strong>. Veți primi un răspuns în termen de maximum <strong>30 de zile calendaristice</strong>.</p>
+  </section>
+
+  <section class="section" id="plangere">
+    <h2><span class="section-num">6</span>Dreptul de a depune plângere</h2>
+    <p>Dacă considerați că drepturile dumneavoastră au fost încălcate, aveți dreptul de a depune plângere la <strong>Autoritatea Națională de Supraveghere a Prelucrării Datelor cu Caracter Personal (ANSPDCP)</strong>:</p>
+    <ul>
+      <li><strong>Site:</strong> <a href="https://www.dataprotection.ro" target="_blank" rel="noopener noreferrer">www.dataprotection.ro</a></li>
+      <li><strong>Email:</strong> anspdcp@dataprotection.ro</li>
+      <li><strong>Adresă:</strong> Bd. G-ral. Gheorghe Magheru 28-30, București, 010336</li>
+    </ul>
+  </section>
+
+  <section class="section" id="siguranta">
+    <h2><span class="section-num">7</span>Securitatea datelor</h2>
+    <p>Implementăm măsuri tehnice și organizatorice adecvate pentru protejarea datelor:</p>
+    <ul>
+      <li>Conexiune HTTPS/SSL criptată</li>
+      <li>Acces restricționat la date</li>
+      <li>Parole securizate și autentificare</li>
+      <li>Actualizări regulate de securitate</li>
+      <li>Politique de acces cu principiul "need-to-know"</li>
+    </ul>
+  </section>
+
+  <section class="section" id="update">
+    <h2><span class="section-num">8</span>Actualizări ale politicii</h2>
+    <p>Această politică poate fi actualizată periodic pentru a reflecta modificări legislative sau operaționale. Data ultimei actualizări este indicată în partea de sus. Vă recomandăm să consultați această pagină periodic. Continuarea utilizării site-ului după publicarea modificărilor constituie acceptarea noilor termeni.</p>
+  </section>
+
+  <section class="section" id="contact">
+    <h2><span class="section-num">9</span>Contact</h2>
+  </section>
+
+  <div class="contact-box">
+    <h3>Ai întrebări despre confidențialitate?</h3>
+    <p>Echipa noastră de compliance este disponibilă pentru a răspunde tuturor întrebărilor GDPR.</p>
+    <p>
+      📧 <a href="mailto:romeonacu777@gmail.com">romeonacu777@gmail.com</a>
+      &nbsp;&nbsp;·&nbsp;&nbsp;
+      📞 <a href="tel:+40727661282">0727 661 282</a>
+    </p>
+    <p style="margin-top:.6rem;font-size:.8rem;color:rgba(255,255,255,.45)">Rosher Words SRL &nbsp;·&nbsp; București &nbsp;·&nbsp; CUI: RO XXXXXXXX</p>
+  </div>
+
+</main>
+
+<footer>
+  <p>© 2026 Rosher Words SRL. Toate drepturile rezervate.</p>
+  <div class="footer-links">
+    <a href="index.html">Acasă</a>
+    <a href="privacy-policy.html">Politica de Confidențialitate</a>
+    <a href="terms-conditions.html">Termeni și Condiții</a>
+    <a href="anpc.html">ANPC</a>
+  </div>
+</footer>
+
+</body>
+</html>

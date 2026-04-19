@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>ANPC – Protecția Consumatorilor</title>
+<meta name="description" content="Informații despre ANPC și platformele de soluționare a litigiilor pentru consumatori. Contacte și resurse pentru protecția drepturilor tale."/>
+<meta name="robots" content="index,follow"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --c1:#1a0533;--c2:#6c2bd9;--c3:#9b59f5;--c4:#d4a9ff;
+  --acc:#f0c040;
+  --bg:#faf9fc;--bg2:#f3effe;--white:#fff;
+  --dark:#0f0520;--text:#2d2040;--muted:#7a6d8a;--border:#e2d9f3;
+  --font:'Inter',system-ui,sans-serif;
+  --serif:'Playfair Display',Georgia,serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.7}
+a{color:var(--c2);text-decoration:none}
+a:hover{text-decoration:underline}
+
+header{
+  position:sticky;top:0;z-index:99;
+  background:rgba(255,255,255,.93);backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--border);
+  padding:.9rem 0;
+  box-shadow:0 2px 20px rgba(108,43,217,.07);
+}
+.header-inner{max-width:900px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:.6rem;font-weight:900;font-size:1.2rem;color:var(--c1);text-decoration:none}
+.logo-mark{width:34px;height:34px;background:linear-gradient(135deg,var(--c2),var(--c3));border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:.85rem;font-weight:900}
+.back-btn{display:inline-flex;align-items:center;gap:.45rem;font-size:.85rem;font-weight:600;color:var(--muted);border:1.5px solid var(--border);border-radius:50px;padding:.4rem 1rem;transition:all .2s}
+.back-btn:hover{color:var(--c2);border-color:var(--c2);background:var(--bg2)}
+
+.page-banner{
+  background:linear-gradient(135deg,var(--dark) 0%,var(--c1) 100%);
+  padding:4rem 1.5rem 3rem;text-align:center;position:relative;overflow:hidden;
+}
+.page-banner::before{
+  content:'';position:absolute;inset:0;
+  background-image:radial-gradient(rgba(155,89,245,.08) 1px,transparent 1px);
+  background-size:28px 28px;
+}
+.page-banner-inner{position:relative;z-index:1;max-width:700px;margin:0 auto}
+.page-tag{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--acc);background:rgba(240,192,64,.1);border:1px solid rgba(240,192,64,.25);padding:.3rem .9rem;border-radius:50px;margin-bottom:1rem}
+.page-banner h1{font-family:var(--serif);font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;color:#fff;margin-bottom:.75rem}
+.page-banner p{font-size:.95rem;color:rgba(255,255,255,.6);max-width:520px;margin:0 auto}
+
+.content-wrap{max-width:900px;margin:0 auto;padding:3.5rem 1.5rem 5rem}
+
+.section{margin-bottom:3rem}
+.section h2{
+  font-family:var(--serif);font-size:1.35rem;font-weight:800;color:var(--c1);
+  margin-bottom:1rem;padding-bottom:.6rem;
+  border-bottom:2px solid var(--border);
+}
+.section p{color:var(--muted);font-size:.95rem;margin-bottom:1rem;line-height:1.8}
+.section ul{padding-left:1.4rem;margin-bottom:1rem;display:flex;flex-direction:column;gap:.5rem}
+.section li{color:var(--muted);font-size:.95rem;line-height:1.7}
+.section strong{color:var(--text)}
+
+.contact-card{
+  background:#fff;border:1px solid var(--border);border-radius:14px;
+  padding:2rem;margin-bottom:1.5rem;
+  transition:border-color .2s,box-shadow .2s;
+}
+.contact-card:hover{border-color:var(--c2);box-shadow:0 8px 32px rgba(108,43,217,.12)}
+.contact-card h3{font-size:1.1rem;font-weight:800;color:var(--c1);margin-bottom:.5rem}
+.contact-card p{font-size:.9rem;color:var(--muted);margin-bottom:.8rem}
+.contact-card ul{margin:0;padding-left:1.2rem}
+.contact-card li{font-size:.9rem;margin-bottom:.4rem}
+.contact-card a{color:var(--c2);font-weight:600}
+.contact-card a:hover{text-decoration:underline}
+
+.link-btn{
+  display:inline-flex;align-items:center;gap:.6rem;
+  background:linear-gradient(135deg,var(--c2),var(--c3));color:#fff;
+  padding:1rem 1.8rem;border-radius:50px;
+  font-weight:700;font-size:.95rem;
+  transition:transform .2s,box-shadow .2s;
+  margin-right:.8rem;margin-bottom:1rem;
+}
+.link-btn:hover{
+  text-decoration:none;
+  transform:translateY(-2px);
+  box-shadow:0 8px 32px rgba(108,43,217,.3);
+}
+.link-btn span{font-size:1.15rem}
+
+.info-box{
+  background:rgba(108,43,217,.06);border:1px solid rgba(108,43,217,.2);
+  border-left:4px solid var(--c2);border-radius:0 10px 10px 0;
+  padding:1.2rem 1.4rem;margin:1.5rem 0;font-size:.9rem;color:var(--text);
+}
+
+.steps{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:1.5rem;margin:2rem 0;
+}
+.step-card{
+  background:var(--bg2);border:1px solid var(--border);
+  border-radius:12px;padding:1.5rem;
+}
+.step-number{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:40px;height:40px;background:var(--c2);color:#fff;
+  border-radius:50%;font-weight:900;font-size:1.1rem;margin-bottom:.8rem;
+}
+.step-card h3{font-size:.95rem;font-weight:700;color:var(--c1);margin-bottom:.5rem}
+.step-card p{font-size:.85rem;color:var(--muted);line-height:1.6}
+
+footer{background:var(--dark);color:rgba(255,255,255,.5);padding:2rem 1.5rem;text-align:center;font-size:.82rem}
+footer a{color:rgba(255,255,255,.4);margin:0 .6rem;transition:color .2s}
+footer a:hover{color:var(--acc);text-decoration:none}
+.footer-links{margin-top:.6rem;display:flex;flex-wrap:wrap;justify-content:center;gap:.25rem}
+
+@media(max-width:600px){
+  .link-btn{display:flex;margin-right:0;width:100%}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <div class="logo-mark">RW</div>
+      <div style="font-size:1rem"><em style="font-style:normal;color:var(--c2)">Rosher</em> Words</div>
+    </a>
+    <a href="index.html" class="back-btn">← Înapoi la site</a>
+  </div>
+</header>
+
+<div class="page-banner">
+  <div class="page-banner-inner">
+    <div class="page-tag">Protecția Consumatorului</div>
+    <h1>ANPC și Drepturi ale Consumatorului</h1>
+    <p>Resurse și informații despre cum îți poți apăra drepturile ca și consumator în relație cu Rosher Words SRL.</p>
+  </div>
+</div>
+
+<main class="content-wrap">
+
+  <section class="section">
+    <h2>Autoritatea Națională pentru Protecția Consumatorilor (ANPC)</h2>
+    <p><strong>ANPC</strong> este instituția publică din România responsabilă cu protecția drepturilor consumatorilor. Dacă ai o problemă cu serviciile noastre și nu am putut rezolva-o prin contact direct, poți apela la ANPC.</p>
+
+    <div class="contact-card">
+      <h3>📞 ANPC – Contacte principale</h3>
+      <ul>
+        <li><strong>Telefon:</strong> <a href="tel:+40213123888">021.312.38.88</a> (Birou Național)</li>
+        <li><strong>Email:</strong> <a href="mailto:contact@anpc.gov.ro">contact@anpc.gov.ro</a></li>
+        <li><strong>Site oficial:</strong> <a href="https://www.anpc.gov.ro" target="_blank" rel="noopener noreferrer">www.anpc.gov.ro</a></li>
+        <li><strong>Adresă:</strong> Str. Lucreția Preda, nr. 10, Sector 6, București, 060124</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Soluționarea Online a Litigiilor (SOL) – Comisia Europeană</h2>
+    <p>Dacă ești consumator din UE și dorești o soluție alternativă la instanțele judecătorești, poți utiliza platforma online a Comisiei Europene pentru soluționarea disputelor.</p>
+
+    <a href="https://consumer-redress.ec.europa.eu/site-relocation_en?event=main.home.chooseLanguage" target="_blank" rel="noopener noreferrer" class="link-btn">
+      <span>🌍</span> Accesează platforma SOL
+    </a>
+
+    <div class="contact-card">
+      <h3>ℹ️ Despre platforma SOL</h3>
+      <p>Platforma de Rezolvare Online a Litigiilor (SOL) permite consumatorilor și comercianților să rezolve litigiile în mod transparent, eficient și cost-efectiv, fără a fi necesară o procedură judiciară tradițională.</p>
+      <ul>
+        <li><strong>Disponibil pentru:</strong> Consumatori din România și alte țări UE</li>
+        <li><strong>Gratuit:</strong> Serviciul este gratuit</li>
+        <li><strong>Neutru:</strong> Mediere imparțială de un terț neutru</li>
+        <li><strong>Rapid:</strong> Rezoluție în termen de 90 de zile</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Pași pentru a te adresa ANPC</h2>
+
+    <div class="steps">
+      <div class="step-card">
+        <div class="step-number">1</div>
+        <h3>Contact inițial</h3>
+        <p>Contactează întâi Rosher Words SRL la <a href="mailto:romeonacu777@gmail.com">romeonacu777@gmail.com</a> sau <a href="tel:+40727661282">0727 661 282</a> pentru a încerca rezolvarea problemei.</p>
+      </div>
+
+      <div class="step-card">
+        <div class="step-number">2</div>
+        <h3>Documentare</h3>
+        <p>Strânge dovezi: email-uri, contracte, fotografii, capture de ecran, corespondență, chitanțe — orice document relevant.</p>
+      </div>
+
+      <div class="step-card">
+        <div class="step-number">3</div>
+        <h3>Depunere reclamație</h3>
+        <p>Depune o reclamație scrisă la ANPC, cu descrierea problemei și dovezile atașate. Poți merge personal sau trimite online.</p>
+      </div>
+
+      <div class="step-card">
+        <div class="step-number">4</div>
+        <h3>Investigație</h3>
+        <p>ANPC va investiga plângerea și va solicita răspunsuri de la Rosher Words SRL.</p>
+      </div>
+
+      <div class="step-card">
+        <div class="step-number">5</div>
+        <h3>Rezoluție</h3>
+        <p>ANPC va emite o decizie și va lua măsuri dacă sunt încălcate drepturile consumatorului.</p>
+      </div>
+
+      <div class="step-card">
+        <div class="step-number">6</div>
+        <h3>Apel (dacă necesar)</h3>
+        <p>Dacă nu ești mulțumit de decizie, poți apela la instanța de judecată competentă din București.</p>
+      </div>
+    </div>
+
+    <div class="info-box">
+      <strong>⚠️ Important:</strong> Reclamațiile la ANPC sunt gratuite și nu necesită avocat. Totuși, ANPC poate dura 3-6 luni pentru investigație. Poți apela și la soluționarea alternativă (SOL) în același timp.
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Drepturile pe care ANPC le apără</h2>
+    <p>ANPC intervine atunci când sunt încălcate:</p>
+    <ul>
+      <li><strong>Dreptul la informare:</strong> Prestarea de servicii fără informații clare despre pret, condiții</li>
+      <li><strong>Dreptul la calitate:</strong> Serviciile nu corespund descrierii sau acordului</li>
+      <li><strong>Dreptul la retragere:</strong> (la distanță) Imposibilitate de a renunța la serviciu în termenul legal</li>
+      <li><strong>Dreptul la reparare/compensație:</strong> Daune sau non-livrare</li>
+      <li><strong>Dreptul de confidențialitate:</strong> Utilizarea neautorizată a datelor personale</li>
+      <li><strong>Dreptul la reclamație:</strong> Nerespectarea procedurilor de tratare a reclamațiilor</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2>Ce se întâmplă dacă ANPC decide că avem culpa</h2>
+    <p>Dacă ANPC constată că Rosher Words SRL a încălcat drepturile tale:</p>
+    <ul>
+      <li>Putem fi obligate să îți rambursez banii</li>
+      <li>Putem fi obligate să parchezim serviciile dacă sunt necorespunzătoare</li>
+      <li>Putem fi date în pagubă pe site-ul ANPC</li>
+      <li>În cazuri grave, putem fi amendate de către ANPC</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2>Alte drepturi legale</h2>
+    <p>Pe lângă ANPC, tu ca și consumator ai și alte drepturi sub legislația română:</p>
+    <ul>
+      <li><strong>Legea nr. 34/1988 (Legea Consumului):</strong> Protecția drepturilor consumatorilor</li>
+      <li><strong>GDPR (Regulamentul UE 2016/679):</strong> Protecția datelor personale</li>
+      <li><strong>Cod Civil:</strong> Răspunderea civilă și contractuală</li>
+      <li><strong>Legea nr. 8/1996:</strong> Protecția drepturilor de autor (dacă este relevant)</li>
+    </ul>
+  </section>
+
+  <section class="section" style="background:linear-gradient(135deg,var(--c1),var(--c2));border-radius:16px;padding:2rem;color:#fff;margin-top:3rem">
+    <h2 style="color:#fff;border-color:rgba(255,255,255,.2)">📌 Important</h2>
+    <p style="color:rgba(255,255,255,.8)">Rosher Words SRL respectă integral legislația de protecție a consumatorilor din România și UE. Suntem transparenți în comunicare și servicii. Dacă ai o problemă, suntem deschişi la discuții constructive pentru a o rezolva.</p>
+    <p style="color:rgba(255,255,255,.8);margin-top:1rem"><strong>Contactează-ne direct înainte de a merge la ANPC:</strong> <a href="tel:+40727661282" style="color:var(--acc)">0727 661 282</a> sau <a href="mailto:romeonacu777@gmail.com" style="color:var(--acc)">romeonacu777@gmail.com</a></p>
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2026 Rosher Words SRL. Toate drepturile rezervate.</p>
+  <div class="footer-links">
+    <a href="index.html">Acasă</a>
+    <a href="privacy-policy.html">Politica de Confidențialitate</a>
+    <a href="terms-conditions.html">Termeni și Condiții</a>
+    <a href="anpc.html">ANPC</a>
+  </div>
+</footer>
+
+</body>
+</html>

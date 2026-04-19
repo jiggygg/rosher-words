@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TSL — Transport & Logistics Solutions</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --dark:    #0a0c10;
+      --darker:  #060709;
+      --accent:  #f59e0b;
+      --accent2: #d97706;
+      --text:    #e2e8f0;
+      --muted:   #94a3b8;
+      --card:    #111827;
+      --border:  #1e293b;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: var(--dark);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 4rem;
+      background: rgba(6, 7, 9, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .logo {
+      font-size: 1.6rem;
+      font-weight: 900;
+      letter-spacing: .05em;
+      color: var(--accent);
+    }
+    .logo span { color: var(--text); }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2.5rem;
+    }
+    nav a {
+      text-decoration: none;
+      color: var(--muted);
+      font-size: .9rem;
+      font-weight: 500;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      transition: color .2s;
+    }
+    nav a:hover { color: var(--accent); }
+
+    /* ── HERO ── */
+    #hero {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: var(--darker);
+    }
+
+    /* Road perspective */
+    .road-wrap {
+      position: absolute;
+      inset: 0;
+      perspective: 600px;
+      overflow: hidden;
+    }
+    .road {
+      position: absolute;
+      bottom: -10%;
+      left: 50%;
+      transform: translateX(-50%) rotateX(55deg);
+      width: 280px;
+      height: 260%;
+      background: #141820;
+      border-left:  3px solid #1e2430;
+      border-right: 3px solid #1e2430;
+    }
+    .road::before, .road::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 6px;
+      background: repeating-linear-gradient(
+        to bottom,
+        var(--accent) 0 60px,
+        transparent 60px 120px
+      );
+      top: 0; bottom: 0;
+    }
+    .road-glow {
+      position: absolute;
+      bottom: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 300px;
+      background: radial-gradient(ellipse at center bottom, rgba(245,158,11,.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    /* Grid lines / starfield bg */
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(245,158,11,.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(245,158,11,.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+
+    /* Truck SVG wrapper */
+    .truck-wrap {
+      position: absolute;
+      bottom: 14%;
+      left: 50%;
+      transform: translateX(-50%) translateZ(0);
+      transform-origin: center bottom;
+      animation: truckApproach 3s cubic-bezier(.22,.61,.36,1) forwards;
+      filter: drop-shadow(0 0 40px rgba(245,158,11,.55));
+    }
+    @keyframes truckApproach {
+      0%   { transform: translateX(-50%) scale(.06) translateY(60px); opacity: 0; filter: drop-shadow(0 0 0 transparent); }
+      30%  { opacity: 1; }
+      100% { transform: translateX(-50%) scale(1) translateY(0);      opacity: 1; filter: drop-shadow(0 0 40px rgba(245,158,11,.55)); }
+    }
+
+    /* headlight beams */
+    .beams {
+      position: absolute;
+      bottom: 14%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 500px;
+      height: 280px;
+      pointer-events: none;
+      opacity: 0;
+      animation: beamsAppear .6s 2.8s forwards;
+    }
+    @keyframes beamsAppear { to { opacity: 1; } }
+
+    .beam {
+      position: absolute;
+      bottom: 58px;
+      width: 0;
+      height: 0;
+    }
+    .beam-l {
+      left: calc(50% - 120px);
+      border-left:  180px solid transparent;
+      border-right:  60px solid transparent;
+      border-bottom: 280px solid rgba(245,158,11,.07);
+      transform: rotate(-12deg) translateX(-60px);
+      transform-origin: bottom right;
+    }
+    .beam-r {
+      right: calc(50% - 120px);
+      border-right: 180px solid transparent;
+      border-left:   60px solid transparent;
+      border-bottom: 280px solid rgba(245,158,11,.07);
+      transform: rotate(12deg) translateX(60px);
+      transform-origin: bottom left;
+    }
+
+    /* Hero copy */
+    .hero-copy {
+      position: relative;
+      z-index: 10;
+      text-align: center;
+      margin-bottom: 340px;
+      opacity: 0;
+      animation: fadeUp .8s 3.2s forwards;
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .hero-tag {
+      display: inline-block;
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      border: 1px solid rgba(245,158,11,.35);
+      padding: .35rem 1rem;
+      border-radius: 2rem;
+      margin-bottom: 1.2rem;
+    }
+    .hero-copy h1 {
+      font-size: clamp(2.8rem, 6vw, 5.5rem);
+      font-weight: 900;
+      line-height: 1.05;
+      letter-spacing: -.02em;
+    }
+    .hero-copy h1 em {
+      font-style: normal;
+      color: var(--accent);
+    }
+    .hero-copy p {
+      margin-top: 1.2rem;
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 480px;
+      margin-inline: auto;
+    }
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      margin-top: 2rem;
+      padding: .9rem 2rem;
+      background: var(--accent);
+      color: #000;
+      font-weight: 700;
+      font-size: .95rem;
+      letter-spacing: .04em;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background .2s, transform .2s;
+    }
+    .hero-cta:hover { background: var(--accent2); transform: translateY(-2px); }
+
+    .scroll-hint {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: .5rem;
+      opacity: 0;
+      animation: fadeUp .6s 3.8s forwards;
+    }
+    .scroll-hint span {
+      font-size: .65rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .mouse {
+      width: 22px; height: 34px;
+      border: 2px solid var(--border);
+      border-radius: 11px;
+      display: flex;
+      justify-content: center;
+      padding-top: 5px;
+    }
+    .mouse::before {
+      content: '';
+      width: 3px; height: 6px;
+      background: var(--accent);
+      border-radius: 2px;
+      animation: scrollDot 1.6s infinite;
+    }
+    @keyframes scrollDot {
+      0%   { transform: translateY(0);  opacity: 1; }
+      100% { transform: translateY(8px); opacity: 0; }
+    }
+
+    /* ── SECTION SHARED ── */
+    section { padding: 7rem 2rem; }
+    .section-inner { max-width: 1100px; margin-inline: auto; }
+    .section-tag {
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: .8rem;
+    }
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 900;
+      letter-spacing: -.02em;
+      line-height: 1.1;
+    }
+    .section-title em { font-style: normal; color: var(--accent); }
+    .divider {
+      width: 50px; height: 3px;
+      background: var(--accent);
+      border-radius: 2px;
+      margin: 1.4rem 0 2rem;
+    }
+
+    /* ── ABOUT ── */
+    #about { background: var(--dark); }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+    .about-text p {
+      color: var(--muted);
+      line-height: 1.8;
+      font-size: 1.02rem;
+      margin-bottom: 1.2rem;
+    }
+    .about-text p:last-child { margin-bottom: 0; }
+
+    .stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    .stat-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.8rem 1.5rem;
+      transition: border-color .2s, transform .2s;
+    }
+    .stat-card:hover { border-color: var(--accent); transform: translateY(-3px); }
+    .stat-num {
+      font-size: 2.4rem;
+      font-weight: 900;
+      color: var(--accent);
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: .82rem;
+      color: var(--muted);
+      margin-top: .4rem;
+      letter-spacing: .04em;
+    }
+
+    /* ── SERVICES strip ── */
+    .services-strip {
+      background: var(--card);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 4rem 2rem;
+    }
+    .services-inner {
+      max-width: 1100px;
+      margin-inline: auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+    .service {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    .service-icon {
+      flex-shrink: 0;
+      width: 46px; height: 46px;
+      background: rgba(245,158,11,.12);
+      border: 1px solid rgba(245,158,11,.25);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+    }
+    .service h3 {
+      font-size: .95rem;
+      font-weight: 700;
+      margin-bottom: .35rem;
+    }
+    .service p {
+      font-size: .85rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ── CONTACT ── */
+    #contact { background: var(--darker); }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 5rem;
+      align-items: start;
+    }
+    .contact-info p {
+      color: var(--muted);
+      line-height: 1.8;
+      font-size: 1rem;
+      margin-bottom: 2rem;
+    }
+    .contact-detail {
+      display: flex;
+      align-items: center;
+      gap: .9rem;
+      margin-bottom: 1.1rem;
+      font-size: .9rem;
+      color: var(--muted);
+    }
+    .contact-detail .icon {
+      width: 36px; height: 36px;
+      background: rgba(245,158,11,.1);
+      border: 1px solid rgba(245,158,11,.2);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    /* Form */
+    form {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+    }
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: .4rem;
+    }
+    label {
+      font-size: .78rem;
+      font-weight: 600;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    input, textarea, select {
+      background: var(--darker);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: .75rem 1rem;
+      color: var(--text);
+      font-size: .95rem;
+      font-family: inherit;
+      transition: border-color .2s, box-shadow .2s;
+      outline: none;
+    }
+    input:focus, textarea:focus, select:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(245,158,11,.12);
+    }
+    textarea { resize: vertical; min-height: 130px; }
+    select option { background: var(--card); }
+
+    .submit-btn {
+      margin-top: .4rem;
+      padding: .9rem 2rem;
+      background: var(--accent);
+      color: #000;
+      font-weight: 800;
+      font-size: 1rem;
+      letter-spacing: .04em;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background .2s, transform .2s;
+      align-self: flex-start;
+    }
+    .submit-btn:hover { background: var(--accent2); transform: translateY(-2px); }
+
+    /* Success toast */
+    .toast {
+      display: none;
+      align-items: center;
+      gap: .7rem;
+      padding: .9rem 1.2rem;
+      background: rgba(34,197,94,.12);
+      border: 1px solid rgba(34,197,94,.3);
+      border-radius: 6px;
+      color: #86efac;
+      font-size: .9rem;
+    }
+    .toast.visible { display: flex; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--darker);
+      border-top: 1px solid var(--border);
+      padding: 2.5rem 4rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    footer p { font-size: .82rem; color: var(--muted); }
+    footer .logo { font-size: 1.2rem; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      nav { padding: 1rem 1.5rem; }
+      .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .services-inner { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      footer { flex-direction: column; text-align: center; }
+    }
+    @media (max-width: 600px) {
+      nav ul { display: none; }
+      .hero-copy { margin-bottom: 260px; }
+      .stats { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <div class="logo">TSL<span>.</span></div>
+  <ul>
+    <li><a href="#hero">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- ── HERO ── -->
+<section id="hero">
+  <div class="hero-grid"></div>
+
+  <div class="road-wrap">
+    <div class="road"></div>
+    <div class="road-glow"></div>
+  </div>
+
+  <!-- Headlight beams (appear after truck arrives) -->
+  <div class="beams">
+    <div class="beam beam-l"></div>
+    <div class="beam beam-r"></div>
+  </div>
+
+  <!-- Truck SVG -->
+  <div class="truck-wrap">
+    <svg viewBox="0 0 420 200" width="420" height="200" xmlns="http://www.w3.org/2000/svg">
+      <!-- Trailer -->
+      <rect x="10" y="40" width="260" height="130" rx="6" fill="#1a2235" stroke="#2d3f5c" stroke-width="2"/>
+      <!-- Trailer ribbing -->
+      <line x1="60"  y1="40" x2="60"  y2="170" stroke="#2d3f5c" stroke-width="1.5"/>
+      <line x1="110" y1="40" x2="110" y2="170" stroke="#2d3f5c" stroke-width="1.5"/>
+      <line x1="160" y1="40" x2="160" y2="170" stroke="#2d3f5c" stroke-width="1.5"/>
+      <line x1="210" y1="40" x2="210" y2="170" stroke="#2d3f5c" stroke-width="1.5"/>
+      <!-- TSL logo on trailer -->
+      <text x="115" y="115" font-family="Segoe UI,sans-serif" font-size="34" font-weight="900" fill="#f59e0b" letter-spacing="4">TSL</text>
+      <text x="108" y="133" font-family="Segoe UI,sans-serif" font-size="9" fill="#94a3b8" letter-spacing="2.5">TRANSPORT &amp; LOGISTICS</text>
+
+      <!-- Cab -->
+      <rect x="265" y="60" width="120" height="110" rx="8" fill="#0f1724" stroke="#2d3f5c" stroke-width="2"/>
+      <!-- Cab roof dome -->
+      <path d="M275 60 Q325 30 380 60" fill="#0f1724" stroke="#2d3f5c" stroke-width="2"/>
+      <!-- Windshield -->
+      <path d="M278 63 Q325 44 377 63 L377 100 L278 100 Z" fill="#1e3a5f" stroke="#2d4a6e" stroke-width="1.5"/>
+      <!-- Windshield glare -->
+      <path d="M285 66 Q310 52 340 66 L338 72 Q314 58 287 72 Z" fill="rgba(255,255,255,.08)"/>
+      <!-- Cab stripe -->
+      <rect x="265" y="112" width="120" height="5" fill="#f59e0b"/>
+      <!-- Door line -->
+      <line x1="320" y1="105" x2="320" y2="170" stroke="#2d3f5c" stroke-width="1.5"/>
+      <!-- Exhaust stack -->
+      <rect x="258" y="18" width="8" height="50" rx="3" fill="#2d3f5c"/>
+      <rect x="248" y="18" width="8" height="42" rx="3" fill="#2d3f5c"/>
+      <!-- Exhaust smoke -->
+      <circle cx="262" cy="13" r="5" fill="#1a2235" opacity=".7">
+        <animate attributeName="cy" values="13;4;13" dur="2s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values=".7;0;.7" dur="2s" repeatCount="indefinite"/>
+        <animate attributeName="r" values="5;9;5" dur="2s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="252" cy="10" r="4" fill="#1a2235" opacity=".6">
+        <animate attributeName="cy" values="10;1;10" dur="2.4s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values=".6;0;.6" dur="2.4s" repeatCount="indefinite"/>
+        <animate attributeName="r" values="4;8;4" dur="2.4s" repeatCount="indefinite"/>
+      </circle>
+
+      <!-- Front bumper -->
+      <rect x="380" y="140" width="30" height="22" rx="4" fill="#1a2235" stroke="#2d3f5c" stroke-width="1.5"/>
+      <!-- Grille -->
+      <rect x="383" y="145" width="24" height="14" rx="2" fill="#0a0c10" stroke="#2d3f5c" stroke-width="1"/>
+      <line x1="383" y1="149" x2="407" y2="149" stroke="#1e293b" stroke-width="1"/>
+      <line x1="383" y1="153" x2="407" y2="153" stroke="#1e293b" stroke-width="1"/>
+      <line x1="383" y1="157" x2="407" y2="157" stroke="#1e293b" stroke-width="1"/>
+
+      <!-- Headlights -->
+      <rect x="374" y="98" width="14" height="10" rx="3" fill="#fde68a" opacity=".9">
+        <animate attributeName="opacity" values=".9;1;.9" dur="1.8s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="374" y="112" width="14" height="8"  rx="3" fill="#fde68a" opacity=".7">
+        <animate attributeName="opacity" values=".7;1;.7" dur="1.8s" repeatCount="indefinite"/>
+      </rect>
+      <!-- Headlight glow -->
+      <ellipse cx="395" cy="103" rx="20" ry="8" fill="rgba(253,230,138,.18)"/>
+
+      <!-- Trailer wheels -->
+      <circle cx="60"  cy="176" r="18" fill="#111827" stroke="#2d3f5c" stroke-width="3"/>
+      <circle cx="60"  cy="176" r="8"  fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
+      <circle cx="110" cy="176" r="18" fill="#111827" stroke="#2d3f5c" stroke-width="3"/>
+      <circle cx="110" cy="176" r="8"  fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
+      <circle cx="190" cy="176" r="18" fill="#111827" stroke="#2d3f5c" stroke-width="3"/>
+      <circle cx="190" cy="176" r="8"  fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
+      <circle cx="240" cy="176" r="18" fill="#111827" stroke="#2d3f5c" stroke-width="3"/>
+      <circle cx="240" cy="176" r="8"  fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
+      <!-- Cab wheels -->
+      <circle cx="320" cy="176" r="20" fill="#111827" stroke="#2d3f5c" stroke-width="3"/>
+      <circle cx="320" cy="176" r="9"  fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
+      <circle cx="370" cy="176" r="20" fill="#111827" stroke="#2d3f5c" stroke-width="3"/>
+      <circle cx="370" cy="176" r="9"  fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
+
+      <!-- Cab side mirror -->
+      <rect x="382" y="68" width="14" height="9" rx="2" fill="#1a2235" stroke="#2d3f5c" stroke-width="1"/>
+      <line x1="383" y1="68" x2="383" y2="60" stroke="#2d3f5c" stroke-width="1.5"/>
+    </svg>
+  </div>
+
+  <!-- Hero copy -->
+  <div class="hero-copy">
+    <div class="hero-tag">Transport &amp; Logistics Solutions</div>
+    <h1>Delivering <em>Further</em>,<br>Moving <em>Smarter</em>.</h1>
+    <p>Nationwide freight management, tailored logistics, and supply-chain solutions built for your business.</p>
+    <a href="#contact" class="hero-cta">
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      Get In Touch
+    </a>
+  </div>
+
+  <div class="scroll-hint">
+    <div class="mouse"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- ── SERVICES STRIP ── -->
+<div class="services-strip">
+  <div class="services-inner">
+    <div class="service">
+      <div class="service-icon">🚛</div>
+      <div>
+        <h3>Full Truckload</h3>
+        <p>Dedicated capacity for large shipments across the country, on schedule.</p>
+      </div>
+    </div>
+    <div class="service">
+      <div class="service-icon">📦</div>
+      <div>
+        <h3>Warehousing</h3>
+        <p>Secure, temperature-controlled storage with real-time inventory tracking.</p>
+      </div>
+    </div>
+    <div class="service">
+      <div class="service-icon">🌐</div>
+      <div>
+        <h3>Supply Chain</h3>
+        <p>End-to-end logistics management to keep your operations running smoothly.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── ABOUT ── -->
+<section id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-text">
+        <p class="section-tag">Our Story</p>
+        <h2 class="section-title">Built on <em>Trust</em>,<br>Driven by <em>Excellence</em>.</h2>
+        <div class="divider"></div>
+        <p>
+          Founded over two decades ago by a team of logistics veterans, TSL began with a single truck and an unwavering commitment to reliability. What started as a regional carrier has grown into one of the most trusted names in transport and supply-chain management across the country.
+        </p>
+        <p>
+          We believe that logistics is more than moving goods from A to B — it's about keeping promises. Every load we carry is backed by state-of-the-art tracking, a network of professional drivers, and a customer support team that's reachable around the clock.
+        </p>
+        <p>
+          Today, TSL operates a modern fleet of over 400 vehicles, serves more than 2,000 clients, and delivers to every major city and industrial hub in the country. Yet our culture remains rooted in the same values that drove our founders: integrity, safety, and relentless improvement.
+        </p>
+      </div>
+
+      <div class="stats">
+        <div class="stat-card">
+          <div class="stat-num">20+</div>
+          <div class="stat-label">Years in operation</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">400+</div>
+          <div class="stat-label">Fleet vehicles</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">2,000+</div>
+          <div class="stat-label">Active clients</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">99.4%</div>
+          <div class="stat-label">On-time delivery rate</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT ── -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <p class="section-tag">Get In Touch</p>
+        <h2 class="section-title">Let's <em>Talk</em><br>Logistics.</h2>
+        <div class="divider"></div>
+        <p>
+          Whether you need a freight quote, have a question about our services, or want to discuss a long-term partnership — our team is ready to help. Fill in the form and we'll get back to you within one business day.
+        </p>
+
+        <div class="contact-detail">
+          <div class="icon">📍</div>
+          <span>123 Logistics Park, Industrial Drive, City, ST 00000</span>
+        </div>
+        <div class="contact-detail">
+          <div class="icon">📞</div>
+          <span>+1 (800) 123-4567</span>
+        </div>
+        <div class="contact-detail">
+          <div class="icon">✉️</div>
+          <span>info@tslfreight.com</span>
+        </div>
+        <div class="contact-detail">
+          <div class="icon">🕐</div>
+          <span>Mon – Fri: 7 am – 7 pm &nbsp;|&nbsp; 24/7 dispatch line</span>
+        </div>
+      </div>
+
+      <form id="contactForm" novalidate>
+        <div class="form-row">
+          <div class="field">
+            <label for="fname">First Name</label>
+            <input type="text" id="fname" name="fname" placeholder="John" required />
+          </div>
+          <div class="field">
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" name="lname" placeholder="Smith" required />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="john@company.com" required />
+          </div>
+          <div class="field">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" placeholder="+1 (___) ___-____" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="service">Service Enquiry</label>
+          <select id="service" name="service">
+            <option value="">— Select a service —</option>
+            <option>Full Truckload (FTL)</option>
+            <option>Less-Than-Truckload (LTL)</option>
+            <option>Warehousing &amp; Distribution</option>
+            <option>Supply Chain Management</option>
+            <option>Temperature-Controlled Freight</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Tell us about your shipment, route, volume, or any questions you have…" required></textarea>
+        </div>
+
+        <div class="toast" id="toast">
+          ✅ &nbsp;Thanks! We'll be in touch within one business day.
+        </div>
+
+        <button type="submit" class="submit-btn">Send Message &nbsp;→</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="logo">TSL<span>.</span></div>
+  <p>© 2026 TSL Transport &amp; Logistics Solutions. All rights reserved.</p>
+  <p>Built with precision — just like our deliveries.</p>
+</footer>
+
+<script>
+  // Form submit
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const fname = document.getElementById('fname').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    if (!fname || !email || !message) {
+      alert('Please fill in your name, email, and message.');
+      return;
+    }
+
+    const toast = document.getElementById('toast');
+    toast.classList.add('visible');
+    this.reset();
+
+    setTimeout(() => toast.classList.remove('visible'), 6000);
+  });
+
+  // Nav active state on scroll
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('nav a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 100) current = s.id;
+    });
+    navLinks.forEach(a => {
+      a.style.color = a.getAttribute('href') === '#' + current
+        ? 'var(--accent)' : '';
+    });
+  });
+</script>
+</body>
+</html>

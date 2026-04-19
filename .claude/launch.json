@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "TSL Website (static)",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "http.server", "3000", "--directory", "tsl-website"],
+      "port": 3000
+    },
+    {
+      "name": "Rosher Words (static)",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "http.server", "3001", "--directory", "rosher-words"],
+      "port": 3001
+    }
+  ]
+}
